@@ -57,7 +57,7 @@ img {
 }
 
 .user_level {
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	color: #231e39;
 	background-color: #febb0b;
 	border-radius: 5px;
@@ -91,7 +91,6 @@ h4 {
 .btn-primary {
 	background-color: #03bfcb;
 	color: #231e39;
-	/* border: none; */
 	border-radius: 3px;
 	padding: 10px 30px;
 	font-size: 1em;

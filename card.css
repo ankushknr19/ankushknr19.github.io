@@ -57,13 +57,13 @@ img {
 }
 
 .user_level {
-	text-transform: uppercase;
+	text-transform: capitalize;
 	color: #231e39;
 	background-color: #febb0b;
-	border-radius: 3px;
+	border-radius: 5px;
 	font-size: 14px;
 	font-weight: bold;
-	padding: 3px 10px;
+	padding: 3px 6px;
 	position: absolute;
 }
 
@@ -88,10 +88,10 @@ h4 {
 	justify-content: center;
 }
 
-button.primary {
+.btn-primary {
 	background-color: #03bfcb;
 	color: #231e39;
-	border: none;
+	/* border: none; */
 	border-radius: 3px;
 	padding: 10px 30px;
 	font-size: 1em;
@@ -99,13 +99,14 @@ button.primary {
 	margin: 0 5px;
 	min-width: 140px;
 	overflow: clip;
+	text-decoration: none;
 }
 
-button.primary:hover {
+.btn-primary:hover {
 	background-color: #0098a3;
 }
 
-button.primary.ghost {
+.btn-primary.ghost {
 	background-color: transparent;
 	color: #0d7a88;
 	border: 1px solid;
@@ -113,7 +114,7 @@ button.primary.ghost {
 	display: inline-block;
 }
 
-button.primary.ghost:hover {
+.btn-primary.ghost:hover {
 	color: #15a0b3;
 }
 

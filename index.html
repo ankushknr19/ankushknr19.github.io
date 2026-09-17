@@ -1,73 +1,725 @@
-<html>
-	<head>
-		<title>Ankush K.</title>
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0,
-			maximum-scale=1.0, user-scalable=no"
-		/>
-		<link rel="stylesheet" href="card.css" />
-		<link rel="stylesheet" href="bg.css" />
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ankush Kunwar — DevOps Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f4f2;
+  --card:#ffffff;
+  --ink:#16151a;
+  --body:#5e6066;
+  --mute:#9b9aa0;
+  --faint:#c9c6c4;
+  --rule:#e2dedb;
+  --run:#1a9e52;
+  --run-soft:rgba(26,158,82,.12);
+  --sunk:#edeae7;
+  --shadow:20,18,16;
+  --rail-x:88px;
+  --line-pad:128px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#121113;--card:#1a191c;--ink:#f2f0ee;--body:#a2a1a7;--mute:#76757b;
+    --faint:#3a383d;--rule:#2a282d;--run:#3ecb7b;--run-soft:rgba(62,203,123,.14);
+    --sunk:#201f23;--shadow:0,0,0;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121113;--card:#1a191c;--ink:#f2f0ee;--body:#a2a1a7;--mute:#76757b;
+  --faint:#3a383d;--rule:#2a282d;--run:#3ecb7b;--run-soft:rgba(62,203,123,.14);
+  --sunk:#201f23;--shadow:0,0,0;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0}
+body{
+  background:var(--bg);color:var(--body);
+  font-family:"Hanken Grotesk",system-ui,sans-serif;
+  font-size:17.5px;line-height:1.72;-webkit-font-smoothing:antialiased;
+}
+.mono{font-family:"Azeret Mono",ui-monospace,monospace}
 
-		<script src="card.js" defer></script>
-		<script
-			src="https://kit.fontawesome.com/4f508321da.js"
-			crossorigin="anonymous"
-		></script>
-	</head>
-	<body>
-		<main>
-			<article id="profile-card">
-				<img class="user_image" src="../images/user.jpeg" alt="user" />
-				<section>
-					<h1>ankush kunwar</h1>
-					<!-- <h2>DevOps Engineer</h2> -->
-					<h4>Associate DevOps Engineer <br />Amnil Technologies</h4>
-				</section>
-				<section class="buttons">
-					<a
-						href="https://www.instagram.com/n.qush_qn.war"
-						target="_blank"
-						class="btn-primary"
-						>Instagram</a
-					>
-					<a
-						href="https://www.linkedin.com/in/ancxkush"
-						target="_blank"
-						class="btn-primary ghost"
-						>LinkedIn</a
-					>
-				</section>
-				<section class="skills">
-					<h2>skills</h2>
-					<ul>
-						<li>Linux</li>
-						<li>Docker</li>
-						<li>Kubernetes</li>
-						<li>AWS</li>
-						<li>Jenkins</li>
-						<li>Nginx</li>
-						<li>MySQL</li>
-						<li>PHP</li>
-						<li>Node JS</li>
-						<li>React JS</li>
-					</ul>
-				</section>
-			</article>
-		</main>
-		<div class="area">
-			<ul class="circles">
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>
-		</div>
-	</body>
+/* ——— identity: the one left-aligned thing ——— */
+.ident{padding:30px 22px 0;max-width:812px;margin:0 auto}
+.idbox{display:flex;gap:16px;text-align:left}
+.strip{
+  width:7px;flex:none;align-self:stretch;min-height:88px;
+  background-image:radial-gradient(var(--faint) 1px,transparent 1px);
+  background-size:4px 4px;
+}
+.ident .nm{font-size:13.5px;letter-spacing:.24em;color:var(--ink);margin:0;font-weight:500}
+.ident p{margin:0;font-size:13px;letter-spacing:.2em;color:var(--mute);line-height:2.05}
+@media(min-width:1340px){
+  .wrap{padding-top:16vh}
+  .ident{position:fixed;left:44px;top:50%;transform:translateY(-50%);width:300px;padding:0;margin:0;z-index:4}
+}
+
+/* ——— centred column ——— */
+.wrap{max-width:740px;margin:0 auto;padding:0 22px 76px;text-align:center}
+
+@media(min-width:1340px){}
+
+/* ——— avatar ——— */
+:root{--av-line:#2b2a30;--av-fill:#bfe0d1;--av-white:#ffffff;--av-lens:rgba(26,158,82,.10)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --av-line:#e8e6ea;--av-fill:#2d5a46;--av-white:#1a191c;--av-lens:rgba(62,203,123,.12)}}
+:root[data-theme="dark"]{--av-line:#e8e6ea;--av-fill:#2d5a46;--av-white:#1a191c;--av-lens:rgba(62,203,123,.12)}
+.avatar{width:min(224px,58%);margin:0 auto;display:block}
+.avatar+.intro{padding-top:30px}
+.avatar svg{width:100%;height:auto;display:block;overflow:visible}
+.o{fill:none;stroke:var(--av-line);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.w{fill:var(--av-white)}
+.f{fill:var(--av-fill)}
+.pup{fill:var(--av-line)}
+.stubDot{fill:var(--av-line)}
+.lens{fill:var(--av-lens)}
+.lid{fill:var(--av-white);transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);transition:transform .085s ease}
+#av.blink .lid{transform:scaleY(1)}
+@media(prefers-reduced-motion:reduce){.lid{transition:none}}
+
+/* intro */
+.intro{padding:64px 0 4px}
+.intro h1{
+  font-size:clamp(25px,4.4vw,34px);font-weight:500;color:var(--ink);
+  margin:0 0 10px;letter-spacing:-.018em;line-height:1.28;text-wrap:balance;
+}
+.intro p{margin:0 auto;max-width:48ch;font-size:clamp(17px,2.4vw,19.5px)}
+
+/* ——— timeline (rows stay left-aligned) ——— */
+.line{position:relative;margin-top:104px;padding-left:34px;text-align:left;--rail-x:9px;--line-pad:34px}
+@media(min-width:660px){.line{padding-left:128px;--rail-x:88px;--line-pad:128px}}
+.rail{position:absolute;top:0;bottom:0;left:var(--rail-x);width:1px;border-left:1px dashed var(--faint)}
+.rail .fill{position:absolute;left:-1.5px;top:0;width:2px;height:0;background:var(--run);border-radius:2px}
+
+.runhead{position:relative;margin:0 0 36px;min-height:24px}
+/* the landing view stays clean: the run marker and its rail wait for the first scroll */
+.js .runhead,.js .rail{opacity:0;transition:opacity .55s ease,transform .55s cubic-bezier(.16,1,.3,1)}
+.js .runhead{transform:translateY(8px)}
+.js .line.shown .runhead,.js .line.shown .rail{opacity:1}
+.js .line.shown .runhead{transform:none}
+@media(prefers-reduced-motion:reduce){.js .runhead,.js .rail{transition:opacity .2s ease}}
+.runhead .ic{
+  position:absolute;left:calc(var(--rail-x) - var(--line-pad) - 9.5px);top:-1px;
+  width:20px;height:20px;border-radius:50%;
+  background:var(--bg);border:1.5px solid var(--run);display:grid;place-items:center;
+}
+.runhead .ic svg{width:9px;height:9px;display:block}
+.runhead .lb{font-size:10.5px;letter-spacing:.22em;color:var(--run)}
+
+.stg{position:relative;padding:0 0 56px}
+.stg .dot{
+  position:absolute;left:calc(var(--rail-x) - var(--line-pad) - 5px);top:8.8px;
+  width:11px;height:11px;border-radius:50%;
+  background:var(--bg);border:1.5px solid var(--faint);transition:border-color .3s,background .3s,box-shadow .3s;
+}
+.stg.on .dot{border-color:var(--run);background:var(--run);box-shadow:0 0 0 4px var(--run-soft)}
+.stg .tag{
+  display:flex;flex-direction:column;align-items:flex-start;gap:6px;
+  font-size:10.5px;letter-spacing:.14em;color:var(--mute);margin-bottom:8px;
+}
+.stg .ver{
+  font-size:14px;font-weight:400;letter-spacing:.04em;line-height:1;
+  color:var(--faint);transition:color .35s ease;
+}
+.stg.on .ver{color:var(--run)}
+.stg .span{display:flex;flex-direction:column;align-items:center;gap:4px}
+.stg .span i{
+  font-style:normal;font-size:9.5px;letter-spacing:.15em;color:var(--faint);
+  line-height:1.4;text-align:center;
+}
+.stg .span i b{display:block;font-weight:400;font-size:8.5px;letter-spacing:.17em}
+.stg .span s{
+  display:block;width:1.5px;height:16px;border-radius:1px;
+  background:var(--faint);text-decoration:none;
+}
+@media(min-width:660px){
+  .stg .tag{
+    position:absolute;left:calc(-1 * var(--line-pad));top:7.3px;
+    width:calc(var(--rail-x) - 24px);align-items:center;margin:0;
+  }
+}
+.stg h2{
+  font-size:22px;font-weight:600;color:var(--ink);margin:0;letter-spacing:-.012em;
+  display:flex;align-items:center;gap:11px;flex-wrap:wrap;line-height:1.3;
+}
+.chip{
+  font-family:"Azeret Mono",monospace;font-size:9.5px;letter-spacing:.16em;
+  color:var(--run);background:var(--run-soft);padding:3px 8px;border-radius:99px;
+}
+.stg h3{font-size:18px;font-weight:500;color:var(--ink);margin:3px 0 8px;letter-spacing:-.008em}
+.stg .desc{margin:0;max-width:50ch}
+
+.arts{margin-top:22px;display:grid;gap:18px}
+.art{display:flex;gap:18px;align-items:center}
+.art .pic{width:78px;flex:none;filter:drop-shadow(0 8px 14px rgba(var(--shadow),.18))}
+.art .pic svg{width:100%;height:auto;display:block}
+.art .t b{display:block;font-size:16.5px;font-weight:500;color:var(--ink);letter-spacing:-.006em;line-height:1.4}
+.art .t span{display:block;font-size:15.5px;line-height:1.55}
+
+.cd{fill:var(--card);stroke:var(--rule);stroke-width:1}
+.cd2{fill:var(--sunk);stroke:var(--rule);stroke-width:1}
+.dw{fill:none;stroke:var(--mute);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dwg{fill:none;stroke:var(--run);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.fl{fill:var(--faint)}
+.flg{fill:var(--run)}
+
+/* ——— toolbox: a claim, then the kit behind it ——— */
+.tools{margin-top:34px;padding-top:52px;border-top:1px solid var(--rule)}
+.tools .note{margin:0 auto 30px;max-width:40ch;font-size:15.5px;color:var(--mute)}
+
+.says{border-top:1px solid var(--rule)}
+.say{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  padding:11px 0;border-bottom:1px solid var(--rule);text-align:left;
+}
+.say p{
+  margin:0;flex:1 1 15rem;min-width:0;
+  font-size:18px;color:var(--ink);line-height:1.4;letter-spacing:-.012em;
+}
+.say p i{
+  font-style:normal;color:var(--mute);font-size:14px;
+  display:block;letter-spacing:0;line-height:1.5;margin-top:1px;
+}
+.tis{display:flex;gap:16px;flex:none;flex-wrap:wrap;justify-content:flex-end}
+.ti{display:flex;flex-direction:column;align-items:center;gap:4px;width:46px}
+.ti svg{width:19px;height:19px;display:block}
+.ti em{
+  font-style:normal;font-family:"Azeret Mono",ui-monospace,monospace;font-size:7.5px;
+  letter-spacing:.05em;color:var(--mute);line-height:1.25;text-align:center;
+}
+.g1{fill:none;stroke:var(--mute);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.gf{fill:var(--mute)}
+@media(max-width:560px){
+  .say{justify-content:flex-start}
+  .tis{gap:12px}
+}
+
+.papers{margin:64px auto 0;max-width:44ch}
+.papers p{margin:0;font-size:14.5px;color:var(--mute);line-height:1.85}
+
+/* ——— boot gate ——— */
+/* reserve the scrollbar gutter always, so unlocking scroll cannot reflow the page */
+html{scrollbar-gutter:stable}
+body.booting{overflow:hidden}
+
+/* content waits off-stage; .dock only fades (it has a backdrop-filter — transforming it janks) */
+.ident,.wrap{
+  transition:opacity .62s cubic-bezier(.16,1,.3,1),transform .62s cubic-bezier(.16,1,.3,1);
+}
+.dock{transition:opacity .62s cubic-bezier(.16,1,.3,1)}
+.ident{transition-delay:.04s}
+.wrap{transition-delay:.10s}
+.dock{transition-delay:.26s}
+body.booting .ident,body.booting .wrap{opacity:0;transform:translateY(10px)}
+body.booting .dock{opacity:0}
+body.booting .ident,body.booting .wrap,body.booting .dock{will-change:opacity,transform}
+body.settled .ident,body.settled .wrap,body.settled .dock{will-change:auto}
+
+.boot{
+  position:fixed;inset:0;z-index:60;background:var(--bg);
+  display:grid;place-items:center;padding:20px;
+  opacity:1;transition:opacity .46s cubic-bezier(.4,0,.2,1);
+}
+.boot.gone{opacity:0;pointer-events:none}
+/* the console leaves first, then the ground it sat on */
+.bconsole{
+  transition:opacity .3s cubic-bezier(.4,0,.2,1),transform .34s cubic-bezier(.4,0,.2,1);
+  will-change:opacity,transform;
+}
+.boot.lift .bconsole{opacity:0;transform:translateY(-10px) scale(.985)}
+.skip{transition:opacity .24s ease}
+.boot.lift ~ .skip{opacity:0;pointer-events:none}
+.bconsole{
+  width:min(620px,100%);background:var(--card);border:1px solid var(--rule);
+  border-radius:14px;overflow:hidden;text-align:left;
+  box-shadow:0 40px 80px -24px rgba(var(--shadow),.34),0 8px 20px -10px rgba(var(--shadow),.2);
+}
+.bconsole .bar{
+  display:flex;align-items:center;gap:8px;padding:11px 14px;
+  border-bottom:1px solid var(--rule);background:var(--sunk);
+}
+.bconsole .bar i{width:9px;height:9px;border-radius:50%;background:var(--faint);display:block}
+.bconsole .bar span{font-size:11px;letter-spacing:.14em;color:var(--mute);margin-left:6px}
+.blog{
+  padding:16px 18px 6px;font-family:"Azeret Mono",ui-monospace,monospace;
+  font-size:12px;line-height:1.95;color:var(--mute);
+  height:min(50svh,360px);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;
+}
+@media(max-width:560px){.blog{font-size:10.5px;padding:14px 13px 6px;height:min(46svh,300px)}}
+.blog .ln{white-space:pre-wrap;word-break:break-word}
+.blog .cmd{color:var(--body)}
+.blog .ok{color:var(--run)}
+.blog .caret{display:inline-block;width:6px;height:1em;background:var(--body);vertical-align:-.16em;margin-left:1px}
+.bfoot{padding:0 18px 16px}
+.bfoot .prog{height:4px;border-radius:99px;background:var(--sunk);overflow:hidden}
+.bfoot .prog i{display:block;height:100%;width:0;background:var(--run);border-radius:99px;transition:width .4s ease}
+.skip{
+  position:fixed;right:22px;bottom:22px;bottom:calc(22px + env(safe-area-inset-bottom,0px));
+  background:none;border:0;cursor:pointer;
+  font-family:"Azeret Mono",ui-monospace,monospace;font-size:10.5px;letter-spacing:.2em;
+  color:var(--mute);padding:8px 4px;
+}
+.skip:hover,.skip:focus-visible{color:var(--ink);outline:none}
+.skip:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2px}
+
+/* ——— docked footer ——— */
+.dock{
+  position:fixed;left:0;right:0;bottom:0;z-index:5;
+  display:flex;justify-content:center;gap:clamp(14px,4.5vw,50px);flex-wrap:wrap;
+  padding:20px 18px;padding-bottom:calc(20px + env(safe-area-inset-bottom,0px));
+  font-family:"Azeret Mono",monospace;font-size:10.5px;letter-spacing:.2em;
+  background:linear-gradient(to top,var(--bg) 42%,rgba(0,0,0,0));
+  -webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);
+  mask-image:linear-gradient(to top,#000 58%,transparent);
+  -webkit-mask-image:linear-gradient(to top,#000 58%,transparent);
+}
+.dock a{color:var(--mute);text-decoration:none;transition:color .18s}
+.dock a:hover,.dock a:focus-visible{color:var(--ink);outline:none}
+a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.stg .dot{transition:none}}
+</style>
+</head>
+<body id="top" class="booting">
+<script>document.documentElement.className+=" js";</script>
+
+<div class="boot" id="boot">
+  <div class="bconsole">
+    <div class="bar"><i></i><i></i><i></i><span class="mono">ankush &mdash; ~/infra &mdash; apply</span></div>
+    <div class="blog" id="blog" aria-hidden="true"></div>
+    <div class="bfoot"><div class="prog"><i id="bprog"></i></div></div>
+  </div>
+</div>
+<button class="skip" id="skip" type="button">SKIP &#9656;</button>
+<noscript><style>.boot,.skip{display:none!important}body.booting .ident,body.booting .wrap,body.booting .dock{opacity:1;transform:none}body.booting{overflow:auto}</style></noscript>
+
+<aside class="ident">
+  <div class="idbox">
+    <span class="strip"></span>
+    <div class="mono">
+      <p class="nm">ANKUSH KUNWAR</p>
+      <p>KATHMANDU, NEPAL</p>
+      <p>27.7172&deg; N, 85.3240&deg; E</p>
+      <p>GMT+5:45</p>
+    </div>
+  </div>
+</aside>
+
+<main class="wrap">
+
+  <div class="avatar">
+    <svg id="av" viewBox="0 30 280 306" role="img" aria-label="Line drawing of Ankush, whose eyes follow the cursor">
+      <defs>
+        <clipPath id="avFace">
+          <path d="M88 112C88 70 106 48 140 48s52 22 52 64v40c0 40-22 66-52 66s-52-26-52-66z"/>
+        </clipPath>
+        <pattern id="avStub" width="5" height="5" patternUnits="userSpaceOnUse">
+          <circle class="stubDot" cx="1.7" cy="1.7" r=".95" opacity=".55"/>
+        </pattern>
+      </defs>
+
+      <g id="avBody">
+        <path class="f" d="M12 336c8-50 46-78 92-90h72c46 12 84 40 92 90z"/>
+        <path class="w" d="M116 196h48v46h-48z"/>
+        <path class="f" opacity=".5" d="M116 196h48v20c-16 8-32 8-48 0z"/>
+        <path class="o" d="M116 196v42M164 196v42"/>
+        <path class="o" d="M12 336c8-50 46-78 92-90M176 246c46 12 84 40 92 90"/>
+        <path class="o" d="M113 250c12 16 42 16 54 0"/>
+      </g>
+
+      <g id="avHead">
+        <path class="w o" d="M92 134c-12-5-19 8-14 18 4 9 12 11 17 7"/>
+        <path class="o" d="M85 146c3-4 7-2 7 2s-4 5-6 3"/>
+        <path class="w o" d="M188 134c12-5 19 8 14 18-4 9-12 11-17 7"/>
+        <path class="o" d="M195 146c-3-4-7-2-7 2s4 5 6 3"/>
+
+        <path class="w" d="M88 112C88 70 106 48 140 48s52 22 52 64v40c0 40-22 66-52 66s-52-26-52-66z"/>
+        <g clip-path="url(#avFace)">
+          <path class="f" opacity=".45" d="M131 40h20v200h-20z"/>
+          <path fill="url(#avStub)" d="M94 156c10 48 82 48 92 0v66H94z"/>
+          <path fill="url(#avStub)" d="M117 163h46v13h-46z"/>
+        </g>
+        <path class="o" d="M88 112C88 70 106 48 140 48s52 22 52 64v40c0 40-22 66-52 66s-52-26-52-66z"/>
+
+        <path class="f" d="M85 118c-5-44 18-76 55-76s60 32 55 76c-5-14-12-23-21-28 3-9 1-16-4-21-7 9-16 11-25 9 5-7 3-14-2-19-9 13-31 15-46 28-11 9-9 17-12 31z"/>
+        <path class="o" d="M85 118c-5-44 18-76 55-76s60 32 55 76c-5-14-12-23-21-28 3-9 1-16-4-21-7 9-16 11-25 9 5-7 3-14-2-19-9 13-31 15-46 28-11 9-9 17-12 31z"/>
+
+        <g id="avBrows">
+          <path class="o" stroke-width="5.4" d="M103 103c9-6 21-6 29-1"/>
+          <path class="o" stroke-width="5.4" d="M148 102c8-5 20-5 29 1"/>
+        </g>
+
+        <g id="avEyes">
+          <ellipse class="w o" cx="116" cy="125" rx="10" ry="7.6"/>
+          <ellipse class="w o" cx="164" cy="125" rx="10" ry="7.6"/>
+          <circle id="avPupL" class="pup" cx="116" cy="125" r="3.4"/>
+          <circle id="avPupR" class="pup" cx="164" cy="125" r="3.4"/>
+          <ellipse class="lid" cx="116" cy="125" rx="10.6" ry="8.2"/>
+          <ellipse class="lid" cx="164" cy="125" rx="10.6" ry="8.2"/>
+        </g>
+
+        <g id="avGlass">
+          <rect class="lens" x="96" y="109" width="41" height="31" rx="9"/>
+          <rect class="lens" x="143" y="109" width="41" height="31" rx="9"/>
+          <rect class="o" x="96" y="109" width="41" height="31" rx="9"/>
+          <rect class="o" x="143" y="109" width="41" height="31" rx="9"/>
+          <path class="o" d="M137 117c3-3 3-3 6 0"/>
+          <path class="o" d="M96 116l-11 4M184 116l11 4"/>
+        </g>
+
+        <path class="o" d="M140 131l-6 28c2 4 10 4 13 0"/>
+        <path class="o" d="M121 181c11 10 27 10 38 0"/>
+        <path class="o" d="M128 190c8 4 16 4 24 0" opacity=".55"/>
+      </g>
+    </svg>
+  </div>
+
+  <section class="intro">
+    <h1>DevOps Engineer</h1>
+    <p>I build and run cloud infrastructure. Mostly AWS. I automate the boring parts, and I keep things up.</p>
+  </section>
+
+  <div class="line" id="line">
+    <div class="rail"><span class="fill" id="fill"></span></div>
+
+    <div class="runhead">
+      <span class="ic"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1.5 L8.5 5 L2 8.5 Z" class="flg"/></svg></span>
+      <span class="lb mono">PIPELINE RUN</span>
+    </div>
+
+    <div class="stg">
+      <span class="dot"></span>
+      <span class="tag mono"><b class="ver">v2.0</b><span class="span"><i>NOW</i><s></s><i>2025<b>AUG</b></i></span></span>
+      <h2>PortPro <span class="chip">CURRENT</span></h2>
+      <h3>DevOps Engineer</h3>
+      <p class="desc">Multi-tenant logistics SaaS, across several accounts and regions.</p>
+      <div class="arts">
+        <div class="art">
+          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(-5 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(3 46 31)"/><g transform="translate(15,13) rotate(3)"><rect x="0" y="12" width="15" height="14" rx="3" class="dwg"/><path d="M6 16h3M6 20h3" class="dwg"/><path d="M17 19h7M24 19l-4-8h6M24 19l-4 8h6" class="dw"/><rect x="32" y="1" width="13" height="10" rx="2.5" class="dw"/><rect x="32" y="14" width="13" height="10" rx="2.5" class="dw"/><rect x="32" y="27" width="13" height="10" rx="2.5" class="dw"/><path d="M50 6h5M50 19h5M50 32h5" class="dw" opacity=".5"/><rect x="56" y="12" width="13" height="14" rx="3" class="dw" stroke-dasharray="3 3"/></g></svg></span>
+          <span class="t"><b>AWS and Terraform, all day</b><span>Every change goes through Terraform. Shared modules push one edit to every environment, and a standby estate waits for the day a region goes down.</span></span>
+        </div>
+        <div class="art">
+          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(4 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(-3 46 31)"/><g transform="translate(16,14) rotate(-2)"><path d="M0 8l6-6 5 9 5-5" class="dw"/><rect x="21" y="6" width="18" height="18" rx="4" class="dwg"/><path d="M27 12h6M27 18h6" class="dwg"/><path d="M25 6V2M35 6V2M25 24v4M35 24v4M21 11h-4M21 19h-4M39 11h4M39 19h4" class="dwg"/><rect x="50" y="2" width="12" height="9" rx="2" class="dw"/><rect x="50" y="14" width="12" height="9" rx="2" class="dw"/><rect x="50" y="26" width="12" height="9" rx="2" class="dw"/></g></svg></span>
+          <span class="t"><b>AI, from alerts &amp; incidents to tooling</b><span>AI-based alert response and RCA. Internal tools that help developers and ease daily tasks.</span></span>
+        </div>
+        <div class="art">
+          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(-4 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(4 46 31)"/><g transform="translate(15,16) rotate(2)"><path d="M2 2h10l9 9-10 10-9-9z" class="dw"/><circle cx="7.5" cy="7.5" r="2" class="fl"/><path d="M28 20c0-7 2-9 2-12a4 4 0 0 1 8 0c0 3 2 5 2 12z" class="dw"/><path d="M26 20h16M32 24a2.4 2.4 0 0 0 4 0" class="dw"/><rect x="50" y="11" width="16" height="12" rx="3" class="dwg"/><path d="M53.5 11V8a4.5 4.5 0 0 1 9 0v3" class="dwg"/><circle cx="58" cy="17" r="1.6" class="flg"/></g></svg></span>
+          <span class="t"><b>Nothing untracked, nothing unlocked</b><span>Every cost has a name. Every failure has an alert. Every key is short-lived.</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stg">
+      <span class="dot"></span>
+      <span class="tag mono"><b class="ver">v1.2</b><span class="span"><i>2025<b>JUL</b></i><s></s><i>2025<b>FEB</b></i></span></span>
+      <h2>Quickfox Technologies</h2>
+      <h3>Associate DevOps Engineer</h3>
+      <p class="desc">A multi-tenant SaaS platform on AWS.</p>
+      <div class="arts">
+        <div class="art">
+          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(4 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(-3 46 31)"/><g transform="translate(16,14) rotate(-3)"><rect x="0" y="10" width="15" height="15" rx="2.5" class="dw"/><path d="M4 7h10a2 2 0 0 1 2 2v12" class="dw"/><path d="M8 4h10a2 2 0 0 1 2 2v12" class="dw"/><path d="M36 6 46 11.5v11L36 28l-10-5.5v-11z" class="dwg"/><circle cx="36" cy="17" r="2.6" class="flg"/><path d="M52 26 L58 20 L63 23 L70 9" class="dwg"/><path d="M64 9h6v6" class="dwg"/></g></svg></span>
+          <span class="t"><b>A deep dive into AWS</b><span>Infrastructure in CloudFormation, microservices on EKS, and a cloud bill brought down.</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stg">
+      <span class="dot"></span>
+      <span class="tag mono"><b class="ver">v1.1</b><span class="span"><i>2025<b>FEB</b></i><s></s><i>2023<b>MAY</b></i></span></span>
+      <h2>AMNIL Technologies</h2>
+      <h3>Associate DevOps Engineer</h3>
+      <p class="desc">Banking infrastructure. Sites that were not allowed to go down.</p>
+      <div class="arts">
+        <div class="art">
+          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(-5 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(3 46 31)"/><g transform="translate(13,13) rotate(3)"><rect x="0" y="2" width="10" height="9" rx="2" class="dw"/><rect x="0" y="14" width="10" height="9" rx="2" class="dw"/><rect x="0" y="26" width="10" height="9" rx="2" class="dwg"/><ellipse cx="32" cy="9" rx="8" ry="3" class="dw"/><path d="M24 9v13c0 1.7 3.6 3 8 3s8-1.3 8-3V9" class="dw"/><path d="M42 16h6" class="dwg"/><path d="M45 13l3 3-3 3" class="dwg"/><ellipse cx="58" cy="9" rx="8" ry="3" class="dwg"/><path d="M50 9v13c0 1.7 3.6 3 8 3s8-1.3 8-3V9" class="dwg"/></g></svg></span>
+          <span class="t"><b>Applications and databases that survive failure</b><span>High-availability Kubernetes clusters, and database replication set up for failover.</span></span>
+        </div>
+        <div class="art">
+          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(4 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(-3 46 31)"/><g transform="translate(17,17) rotate(-2)"><rect x="0" y="0" width="16" height="12" rx="2" class="dw"/><path d="M0 4h16" class="dw"/><rect x="20" y="0" width="16" height="12" rx="2" class="dw"/><path d="M20 4h16" class="dw"/><rect x="40" y="0" width="16" height="12" rx="2" class="dw"/><path d="M40 4h16" class="dw"/><rect x="0" y="16" width="16" height="12" rx="2" class="dw"/><path d="M0 20h16" class="dw"/><rect x="20" y="16" width="16" height="12" rx="2" class="dw"/><path d="M20 20h16" class="dw"/><rect x="40" y="16" width="16" height="12" rx="2" class="dwg"/><path d="M40 20h16" class="dwg"/></g></svg></span>
+          <span class="t"><b>Kept 20+ bank websites up &amp; running</b><span>Including internal apps &amp; chatbots. Smooth deployments, security patches &amp; rare incidents.</span></span>
+        </div>
+        <div class="art">
+          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(5 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(-2 46 31)"/><g transform="translate(16,12) rotate(-3)"><rect x="0" y="0" width="25" height="32" rx="2.5" class="dw"/><path d="M6 8h13M6 15h13M6 22h9" class="dw"/><rect x="36" y="1" width="14" height="9" rx="2.5" class="dwg"/><rect x="36" y="22" width="14" height="9" rx="2.5" class="dwg"/><path d="M43 10v12" class="dwg"/><path d="M40 19l3 3 3-3" class="dwg"/></g></svg></span>
+          <span class="t"><b>Scripts, documentation and diagrams</b><span>Setup automated, then written down and drawn out so the next person could follow it.</span></span>
+        </div>
+        <div class="art">
+          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(-4 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(4 46 31)"/><g transform="translate(18,14) rotate(2)"><circle cx="9" cy="8" r="5.5" class="dwg"/><path d="M0 26c0-5.2 4-9 9-9s9 3.8 9 9" class="dwg"/><circle cx="30" cy="12" r="4.2" class="dw"/><path d="M23 27c0-4 3.1-7 7-7s7 3 7 7" class="dw"/><circle cx="48" cy="12" r="4.2" class="dw"/><path d="M41 27c0-4 3.1-7 7-7s7 3 7 7" class="dw"/></g></svg></span>
+          <span class="t"><b>Mentored interns and juniors</b><span>Ran training sessions and reviewed their work. Passed on what I&#39;d picked up.</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stg">
+      <span class="dot"></span>
+      <span class="tag mono"><b class="ver">v1.0</b><span class="span"><i>2023<b>MAY</b></i><s></s><i>2023<b>FEB</b></i></span></span>
+      <h2>AMNIL Technologies</h2>
+      <h3>DevOps Intern</h3>
+      <p class="desc">Where it all started.</p>
+      <div class="arts">
+        <div class="art">
+          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true">
+            <rect x="10" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(5 45 32)"/>
+            <rect x="10" y="9" width="70" height="46" rx="5" class="cd" transform="rotate(-2 45 32)"/>
+            <g transform="translate(24,16) rotate(-2)">
+              <rect x="0" y="14" width="11" height="11" rx="2" class="dw"/>
+              <rect x="13" y="14" width="11" height="11" rx="2" class="dw"/>
+              <rect x="26" y="14" width="11" height="11" rx="2" class="dwg"/>
+              <rect x="13" y="1" width="11" height="11" rx="2" class="dw"/>
+              <path d="M0 29 h37" class="dw" opacity=".5"/>
+            </g>
+          </svg></span>
+          <span class="t"><b>First containers shipped</b><span>Docker, Nginx, Linux, CI/CD and Swarm, learned on the job.</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="tools">
+    <p class="note">What I do, and what I use.</p>
+
+    <div class="says">
+      <div class="say">
+        <p>I run cloud estates in code.<i>so it comes back the same every time</i></p>
+        <div class="tis"><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M5.5 17a3.6 3.6 0 0 1 .7-7.1A5 5 0 0 1 16 9.9 3.4 3.4 0 0 1 19 17z"/></svg><em>AWS</em></span><span class="ti"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="g1" d="M12 2.6 20 7.3v9.4L12 21.4 4 16.7V7.3z"/><path class="g1" d="M12 8.4a3.6 3.6 0 1 0 3.4 4.8"/><path class="g1" d="M12 12h3.8"/></svg><em>GCP</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="gf" d="M4 4.6 9 7.5v5.8L4 10.4zm5.8 3.4 5 2.9v5.8l-5-2.9zm5.8 2.9 4.4-2.6v5.2l-4.4 2.6z"/></svg><em>Terraform</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="gf" d="M6 6.5 10 9v4.6L6 11.2zm4.8 2.8 4.2 2.5v4.6l-4.2-2.5zm4.8 2.5 3.7-2.2v4.4L15.6 16z"/><path class="g1" d="M3.5 17.5h17"/></svg><em>OpenTofu</em></span><span class="ti"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="g1" x="3.5" y="9.5" width="11" height="11" rx="2"/><path class="g1" d="M7 6.5h9a2 2 0 0 1 2 2v9"/><path class="g1" d="M10.5 3.5h9a2 2 0 0 1 2 2v9"/></svg><em>CloudFormation</em></span></div>
+      </div>
+      <div class="say">
+        <p>I ship containers and pipelines.<i>and they come back up on their own</i></p>
+        <div class="tis"><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M3 13h14v3.2a2.8 2.8 0 0 1-2.8 2.8H5.8A2.8 2.8 0 0 1 3 16.2z"/><path class="g1" d="M5 13V10h3v3M9 13V10h3v3M13 13V7h3v6M17.5 11.5c1.6-.6 3 0 3.5.9"/></svg><em>Docker</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M12 2.6 20 7v10l-8 4.4L4 17V7z"/><circle class="g1" cx="12" cy="12" r="3"/><path class="g1" d="M12 2.6V9M20 7l-5.4 3.6M20 17l-5.6-3M12 21.4V15M4 17l5.4-3.2M4 7l5.6 3.4"/></svg><em>K8s</em></span><span class="ti"><svg viewBox="0 0 24 24"><circle class="g1" cx="12" cy="12" r="8.6"/><circle class="gf" cx="12" cy="12" r="3"/><path class="g1" d="M12 3.4v3.2M12 17.4v3.2M3.4 12h3.2M17.4 12h3.2"/></svg><em>ECS</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M6 4.5v4.8a3 3 0 0 0 3 3h6a3 3 0 0 1 3 3v4.2"/><circle class="g1" cx="6" cy="3.4" r="1.9"/><circle class="g1" cx="18" cy="20.6" r="1.9"/></svg><em>Actions</em></span><span class="ti"><svg viewBox="0 0 24 24"><rect class="g1" x="4.5" y="10" width="15" height="10" rx="2.6"/><path class="g1" d="M8 10V6.8a4 4 0 0 1 8 0V10"/></svg><em>OIDC</em></span></div>
+      </div>
+      <div class="say">
+        <p>I watch it and keep it locked.<i>the alert arrives before the complaint</i></p>
+        <div class="tis"><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M3 18l4.5-2.5 4 1.5 3.5-7 3 3.5 3-6.5"/><path class="g1" d="M3 21h18" opacity=".45"/></svg><em>NewRelic</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M3 15.5a3.6 3.6 0 0 1 .8-7.1 5 5 0 0 1 9.5-1"/><path class="g1" d="M13 20l3-4h-3l3-4"/></svg><em>CloudWatch</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M4 20V9M9.3 20V4M14.7 20v-8M20 20v-5"/></svg><em>Grafana</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M12 2.8 20 6v6.4c0 4.4-3.3 7.6-8 8.8-4.7-1.2-8-4.4-8-8.8V6z"/><path class="g1" d="M8.8 12.2 11 14.4l4.4-4.6"/></svg><em>IAM</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M12 2.8 20 6v6.4c0 4.4-3.3 7.6-8 8.8-4.7-1.2-8-4.4-8-8.8V6z"/><circle class="gf" cx="12" cy="11" r="1.8"/><path class="g1" d="M12 12.8v3"/></svg><em>SecHub</em></span></div>
+      </div>
+      <div class="say">
+        <p>I write the glue and mind the data.<i>small tools, not big platforms</i></p>
+        <div class="tis"><span class="ti"><svg viewBox="0 0 24 24"><rect class="g1" x="3" y="4.5" width="18" height="15" rx="2.6"/><path class="g1" d="M7 10l2.6 2.2L7 14.4M12.4 15h4.4"/></svg><em>Bash</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M12 2.8 20 7.4v9.2L12 21.2 4 16.6V7.4z"/><path class="g1" d="M9.6 15V9.4l4.8 5.2V9.4"/></svg><em>Node.js</em></span><span class="ti"><svg viewBox="0 0 24 24"><ellipse class="g1" cx="12" cy="6" rx="7" ry="2.9"/><path class="g1" d="M5 6v12c0 1.6 3.1 2.9 7 2.9s7-1.3 7-2.9V6"/><path class="g1" d="M5 12c0 1.6 3.1 2.9 7 2.9s7-1.3 7-2.9"/></svg><em>Postgres</em></span><span class="ti"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse class="g1" cx="12" cy="6" rx="7" ry="2.9"/><path class="g1" d="M5 6v12c0 1.6 3.1 2.9 7 2.9s7-1.3 7-2.9V6"/><path class="g1" d="M5 10.5c0 1.6 3.1 2.9 7 2.9s7-1.3 7-2.9M5 15c0 1.6 3.1 2.9 7 2.9s7-1.3 7-2.9"/></svg><em>MySQL</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M12 2.5c3.4 3.4 5 6.4 5 9.2 0 3.4-2.2 5.8-5 7.3-2.8-1.5-5-3.9-5-7.3 0-2.8 1.6-5.8 5-9.2z"/><path class="g1" d="M12 6.5v14.8"/></svg><em>MongoDB</em></span></div>
+      </div>
+    </div>
+
+    <div class="papers">
+      <p>BE Computer Engineering, T.U. 2022</p>
+      <p>AWS Certified Cloud Practitioner, 2023</p>
+    </div>
+  </section>
+</main>
+
+<footer class="dock">
+  <a href="https://github.com/ankushknr19">GITHUB</a>
+  <a href="https://linkedin.com/in/ancxkush">LINKEDIN</a>
+  <a href="https://instagram.com/n.qush_qn.war">INSTAGRAM</a>
+  <a href="mailto:ank.knr@gmail.com">EMAIL</a>
+</footer>
+
+<script>
+
+/* ——— boot gate: terraform runs, then the page opens ——— */
+(function(){
+  var veil=document.getElementById('boot'),blog=document.getElementById('blog'),
+      prog=document.getElementById('bprog'),skipBtn=document.getElementById('skip');
+  if(!veil||!blog){document.body.classList.remove('booting');return;}
+  var SPIN=['\u280b','\u2819','\u2839','\u2838','\u283c','\u2834','\u2826','\u2827','\u2807','\u280f'];
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var timers=[],finished=false;
+
+  function after(ms,fn){var t=setTimeout(fn,ms);timers.push(t);return t;}
+  function line(cls,text){
+    var d=document.createElement('div');
+    d.className='ln'+(cls?' '+cls:'');
+    if(text)d.textContent=text;
+    blog.appendChild(d);
+    while(blog.childNodes.length>26)blog.removeChild(blog.firstChild);
+    return d;
+  }
+  function open(){
+    if(finished)return;finished=true;
+    for(var i=0;i<timers.length;i++){clearTimeout(timers[i]);clearInterval(timers[i]);}
+    timers=[];
+    prog.style.width='100%';
+
+    /* 1. the console lifts away first */
+    veil.classList.add('lift');
+
+    /* 2. a beat later the ground it sat on fades */
+    after(170,function(){veil.classList.add('gone');});
+
+    /* 3. the page rises into the gap, staggered by CSS delays */
+    after(250,function(){
+      document.body.classList.remove('booting');
+      requestAnimationFrame(function(){
+        window.dispatchEvent(new Event('scroll'));   /* draw the rail at its real value, not mid-fade */
+      });
+    });
+
+    /* 4. tidy up once every transition has finished */
+    after(1150,function(){
+      veil.remove();
+      if(skipBtn)skipBtn.remove();
+      document.body.classList.add('settled');
+      window.dispatchEvent(new Event('scroll'));
+    });
+  }
+  if(skipBtn)skipBtn.addEventListener('click',open);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')open();});
+
+  if(reduce){open();return;}
+
+  /* the script */
+  var STEPS=[
+    {t:'type', s:'terraform plan -out tfplan'},
+    {t:'spin', s:'Refreshing state', ms:250},
+    {t:'ok',   s:'plan saved to tfplan'},
+    {t:'gap'},
+    {t:'type', s:'terraform apply tfplan'},
+    {t:'line', s:'module.identity: Creating...',                  d:80},
+    {t:'line', s:'module.about_me: Creating...',                  d:74},
+    {t:'line', s:'module.identity: Creation complete after 1s',   d:92},
+    {t:'line', s:'module.experience: Creating...',                d:74},
+    {t:'line', s:'module.about_me: Creation complete after 2s',   d:92},
+    {t:'line', s:'module.toolbox: Creating...',                   d:74},
+    {t:'line', s:'module.experience: Creation complete after 3s', d:99},
+    {t:'line', s:'module.contact: Creating...',                   d:74},
+    {t:'line', s:'module.toolbox: Creation complete after 2s',    d:92},
+    {t:'line', s:'module.contact: Creation complete after 6s',    d:109},
+    {t:'gap'},
+    {t:'ok',   s:'Apply complete.'},
+    {t:'gap'},
+    {t:'line', s:'Outputs:',                                   d:140},
+    {t:'line', s:'site = "ankushkunwar.com.np"',               d:220},
+    {t:'gap'},
+    {t:'spin', s:'Resolving ankushkunwar.com.np', ms:750},
+    {t:'done'}
+  ];
+
+  var i=0;
+  function step(){
+    if(finished)return;
+    prog.style.width=Math.round((i/STEPS.length)*100)+'%';
+    if(i>=STEPS.length){open();return;}
+    var k=STEPS[i++];
+
+    if(k.t==='done'){open();return;}
+
+    if(k.t==='gap'){line('',' ');after(80,step);return;}
+
+    if(k.t==='ok'){line('ok','\u2713 '+k.s);after(220,step);return;}
+
+    if(k.t==='line'){line('',k.s);after(k.d||300,step);return;}
+
+    if(k.t==='spin'){
+      var row=line(''),f=0;
+      var id=setInterval(function(){row.textContent=' '+SPIN[f++%SPIN.length]+' '+k.s+'\u2026';},80);
+      timers.push(id);
+      after(k.ms||1000,function(){clearInterval(id);row.remove();step();});
+      return;
+    }
+
+    if(k.t==='type'){
+      var r=line('cmd','$ '),caret=document.createElement('span');
+      caret.className='caret';r.appendChild(caret);
+      var c=0;
+      (function tick(){
+        if(finished)return;
+        if(c<k.s.length){
+          r.insertBefore(document.createTextNode(k.s.charAt(c)),caret);
+          c++;after(10+Math.random()*12,tick);
+        }else{caret.remove();after(120,step);}
+      })();
+      return;
+    }
+  }
+  after(150,step);
+})();
+
+
+/* ——— avatar: follows the cursor ——— */
+(function(){
+  var svg=document.getElementById('av');
+  if(!svg)return;
+  var head=document.getElementById('avHead'),
+      brows=document.getElementById('avBrows'),
+      body=document.getElementById('avBody'),
+      pl=document.getElementById('avPupL'),
+      pr=document.getElementById('avPupR');
+  if(!head||!brows||!pl||!pr)return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce)return;
+
+  var tx=0,ty=0,cx=0,cy=0,live=false,raf=0;
+
+  function aim(e){
+    var r=svg.getBoundingClientRect();
+    if(!r.width)return;
+    var ox=r.left+r.width/2, oy=r.top+r.height*0.40;
+    tx=(e.clientX-ox)/(r.width*1.7);
+    ty=(e.clientY-oy)/(r.height*1.25);
+    tx=tx<-1?-1:tx>1?1:tx;
+    ty=ty<-1?-1:ty>1?1:ty;
+    if(!live){live=true;raf=requestAnimationFrame(frame);}
+  }
+
+  function frame(){
+    cx+=(tx-cx)*0.11;
+    cy+=(ty-cy)*0.11;
+    /* head leads, body trails, pupils overshoot — that offset is what sells it */
+    head.setAttribute('transform','translate('+(cx*7).toFixed(2)+' '+(cy*4.5).toFixed(2)+') rotate('+(cx*2.6).toFixed(2)+' 140 190)');
+    if(body)body.setAttribute('transform','translate('+(cx*2.2).toFixed(2)+' '+(cy*1.1).toFixed(2)+')');
+    brows.setAttribute('transform','translate('+(cx*2.6).toFixed(2)+' '+(cy*4.2).toFixed(2)+')');
+    var px=(cx*3.6).toFixed(2), py=(cy*2.7).toFixed(2);
+    pl.setAttribute('transform','translate('+px+' '+py+')');
+    pr.setAttribute('transform','translate('+px+' '+py+')');
+    if(Math.abs(tx-cx)>0.001||Math.abs(ty-cy)>0.001){raf=requestAnimationFrame(frame);}
+    else{live=false;}
+  }
+
+  window.addEventListener('pointermove',aim,{passive:true});
+  window.addEventListener('scroll',function(){if(!live){live=true;raf=requestAnimationFrame(frame);}},{passive:true});
+
+  /* blink */
+  (function blink(){
+    setTimeout(function(){
+      svg.classList.add('blink');
+      setTimeout(function(){
+        svg.classList.remove('blink');
+        if(Math.random()<0.28){
+          setTimeout(function(){
+            svg.classList.add('blink');
+            setTimeout(function(){svg.classList.remove('blink');},95);
+          },160);
+        }
+        blink();
+      },100);
+    },2600+Math.random()*4200);
+  })();
+})();
+
+/* ——— scroll-drawn pipeline ——— */
+(function(){
+  var line=document.getElementById('line'),fill=document.getElementById('fill');
+  if(!line||!fill)return;
+  var stages=Array.prototype.slice.call(line.querySelectorAll('.stg')),ticking=false;
+  function paint(){
+    ticking=false;
+    var box=line.getBoundingClientRect(),travelled=(window.innerHeight*0.46)-box.top;
+    if(travelled<0)travelled=0;
+    if(travelled>box.height)travelled=box.height;
+    fill.style.height=travelled+'px';
+    if(window.pageYOffset>48)line.classList.add('shown');else line.classList.remove('shown');
+    for(var i=0;i<stages.length;i++){
+      var s=stages[i],d=s.querySelector('.dot'),at=s.offsetTop+(d?d.offsetTop+6:0);
+      if(travelled>=at)s.classList.add('on');else s.classList.remove('on');
+    }
+  }
+  function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(paint);}}
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  paint();
+})();
+
+</script>
+</body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ankush Kunwar — DevOps Engineer</title>
+<title>ancxkush</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -45,7 +45,7 @@ body{
 }
 .mono{font-family:"Azeret Mono",ui-monospace,monospace}
 
-/* ——— identity: the one left-aligned thing ——— */
+/* --- identity: the one left-aligned thing --- */
 .ident{padding:30px 22px 0;max-width:812px;margin:0 auto}
 .idbox{display:flex;gap:16px;text-align:left}
 .strip{
@@ -59,12 +59,12 @@ body{
   .ident{position:fixed;left:44px;top:50%;transform:translateY(-50%);width:300px;padding:0;margin:0;z-index:4}
 }
 
-/* ——— centred column ——— */
+/* --- centred column --- */
 .wrap{max-width:740px;margin:0 auto;padding:22px 22px 76px;text-align:center}
 
 @media(min-width:1340px){.wrap{padding-top:14vh}}
 
-/* ——— avatar ——— */
+/* --- avatar --- */
 :root{--av-line:#2b2a30;--av-fill:#bfe0d1;--av-white:#ffffff;--av-lens:rgba(26,158,82,.10)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --av-line:#e8e6ea;--av-fill:#2d5a46;--av-white:#1a191c;--av-lens:rgba(62,203,123,.12)}}
@@ -90,7 +90,7 @@ body{
 }
 .intro p{margin:0 auto;max-width:48ch;font-size:clamp(17px,2.4vw,19.5px)}
 
-/* ——— timeline (rows stay left-aligned) ——— */
+/* --- timeline (rows stay left-aligned) --- */
 .line{position:relative;margin-top:104px;padding-left:34px;text-align:left;--rail-x:9px;--line-pad:34px}
 @media(min-width:660px){.line{padding-left:128px;--rail-x:88px;--line-pad:128px}}
 .rail{position:absolute;top:0;bottom:0;left:var(--rail-x);width:1px;border-left:1px dashed var(--faint)}
@@ -168,7 +168,7 @@ body{
 .fl{fill:var(--faint)}
 .flg{fill:var(--run)}
 
-/* ——— toolbox: a claim, then the kit behind it ——— */
+/* --- toolbox: a claim, then the kit behind it --- */
 .tools{margin-top:34px;padding-top:52px;border-top:1px solid var(--rule)}
 .tools .note{margin:0 auto 30px;max-width:40ch;font-size:15.5px;color:var(--mute)}
 
@@ -205,12 +205,12 @@ body{
 .papers{margin:64px auto 0;max-width:44ch}
 .papers p{margin:0;font-size:14.5px;color:var(--mute);line-height:1.85}
 
-/* ——— boot gate ——— */
+/* --- boot gate --- */
 /* reserve the scrollbar gutter always, so unlocking scroll cannot reflow the page */
 html{scrollbar-gutter:stable}
 body.booting{overflow:hidden}
 
-/* content waits off-stage; .dock only fades (it has a backdrop-filter — transforming it janks) */
+/* content waits off-stage; .dock only fades (it has a backdrop-filter - transforming it janks) */
 .ident,.wrap{
   transition:opacity .62s cubic-bezier(.16,1,.3,1),transform .62s cubic-bezier(.16,1,.3,1);
 }
@@ -270,7 +270,7 @@ body.settled .ident,body.settled .wrap,body.settled .dock{will-change:auto}
 .skip:hover,.skip:focus-visible{color:var(--ink);outline:none}
 .skip:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2px}
 
-/* ——— docked footer ——— */
+/* --- docked footer --- */
 .dock{
   position:fixed;left:0;right:0;bottom:0;z-index:5;
   display:flex;justify-content:center;gap:clamp(14px,4.5vw,50px);flex-wrap:wrap;
@@ -519,7 +519,7 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
 
 <script>
 
-/* ——— boot gate: terraform runs, then the page opens ——— */
+/* --- boot gate: terraform runs, then the page opens --- */
 (function(){
   var veil=document.getElementById('boot'),blog=document.getElementById('blog'),
       prog=document.getElementById('bprog'),skipBtn=document.getElementById('skip');
@@ -638,7 +638,7 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
 })();
 
 
-/* ——— avatar: follows the cursor ——— */
+/* --- avatar: follows the cursor --- */
 (function(){
   var svg=document.getElementById('av');
   if(!svg)return;
@@ -669,7 +669,7 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
   function frame(){
     cx+=(tx-cx)*0.11;
     cy+=(ty-cy)*0.11;
-    /* head leads, body trails, pupils overshoot — that offset is what sells it */
+    /* head leads, body trails, pupils overshoot - that offset is what sells it */
     head.setAttribute('transform','translate('+(cx*7).toFixed(2)+' '+(cy*4.5).toFixed(2)+') rotate('+(cx*2.6).toFixed(2)+' 140 190)');
     if(body)body.setAttribute('transform','translate('+(cx*2.2).toFixed(2)+' '+(cy*1.1).toFixed(2)+')');
     brows.setAttribute('transform','translate('+(cx*2.6).toFixed(2)+' '+(cy*4.2).toFixed(2)+')');
@@ -683,7 +683,7 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
   window.addEventListener('pointermove',aim,{passive:true});
   window.addEventListener('scroll',function(){if(!live){live=true;raf=requestAnimationFrame(frame);}},{passive:true});
 
-  /* ——— phones have no cursor, so tilt the whole device instead ——— */
+  /* --- phones have no cursor, so tilt the whole device instead --- */
   function clamp(v){return v<-1?-1:v>1?1:v;}
   function tilt(e){
     if(e.gamma===null&&e.beta===null)return;       /* no sensor on this device */
@@ -732,7 +732,7 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
   })();
 })();
 
-/* ——— scroll-drawn pipeline ——— */
+/* --- scroll-drawn pipeline --- */
 (function(){
   var line=document.getElementById('line'),fill=document.getElementById('fill');
   if(!line||!fill)return;

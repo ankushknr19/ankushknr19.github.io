@@ -654,7 +654,8 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
   var tx=0,ty=0,cx=0,cy=0,live=false,raf=0,gyro=false,base=null;
 
   function aim(e){
-    if(gyro)return;              /* a real tilt beats a stray pointer event */
+    if(gyro)return;                       /* a real tilt beats a stray pointer event */
+    if(e.pointerType==='touch')return;    /* phones tilt, they do not point */
     var r=svg.getBoundingClientRect();
     if(!r.width)return;
     var ox=r.left+r.width/2, oy=r.top+r.height*0.40;
@@ -697,15 +698,18 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
     if(!live){live=true;raf=requestAnimationFrame(frame);}
   }
   var DOE=window.DeviceOrientationEvent;
+  function startGyro(){window.addEventListener('deviceorientation',tilt,{passive:true});}
+  function askGyro(){
+    try{DOE.requestPermission().then(function(r){if(r==='granted')startGyro();}).catch(function(){});}
+    catch(e){}
+  }
   if(DOE&&typeof DOE.requestPermission==='function'){
-    /* iOS 13+ only hands this over from inside a real gesture */
-    window.addEventListener('touchend',function ask(){
-      DOE.requestPermission().then(function(r){
-        if(r==='granted')window.addEventListener('deviceorientation',tilt,{passive:true});
-      }).catch(function(){});
-    },{passive:true,once:true});
+    askGyro();                       /* works outright where the grant is remembered */
+    ['touchstart','pointerdown','click'].forEach(function(ev){
+      window.addEventListener(ev,askGyro,{passive:true,once:true});
+    });                              /* iOS 13+ otherwise demands a real gesture first */
   }else if(DOE){
-    window.addEventListener('deviceorientation',tilt,{passive:true});
+    startGyro();                     /* Android and the rest: live from load */
   }
   /* a two-finger tap re-centres if you have shifted position */
   window.addEventListener('touchstart',function(e){if(e.touches.length===2)base=null;},{passive:true});

@@ -56,14 +56,13 @@ body{
 .ident .nm{font-size:13.5px;letter-spacing:.24em;color:var(--ink);margin:0;font-weight:500}
 .ident p{margin:0;font-size:13px;letter-spacing:.2em;color:var(--mute);line-height:2.05}
 @media(min-width:1340px){
-  .wrap{padding-top:16vh}
   .ident{position:fixed;left:44px;top:50%;transform:translateY(-50%);width:300px;padding:0;margin:0;z-index:4}
 }
 
 /* ——— centred column ——— */
-.wrap{max-width:740px;margin:0 auto;padding:0 22px 76px;text-align:center}
+.wrap{max-width:740px;margin:0 auto;padding:22px 22px 76px;text-align:center}
 
-@media(min-width:1340px){}
+@media(min-width:1340px){.wrap{padding-top:14vh}}
 
 /* ——— avatar ——— */
 :root{--av-line:#2b2a30;--av-fill:#bfe0d1;--av-white:#ffffff;--av-lens:rgba(26,158,82,.10)}
@@ -192,12 +191,15 @@ body{
 .ti em{
   font-style:normal;font-family:"Azeret Mono",ui-monospace,monospace;font-size:7.5px;
   letter-spacing:.05em;color:var(--mute);line-height:1.25;text-align:center;
+  overflow-wrap:anywhere;
 }
 .g1{fill:none;stroke:var(--mute);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .gf{fill:var(--mute)}
 @media(max-width:560px){
-  .say{justify-content:flex-start}
-  .tis{gap:12px}
+  .say{justify-content:center;text-align:center}
+  .say p{flex:1 1 100%}
+  .tis{flex:1 1 100%;justify-content:center;gap:10px;margin-top:6px}
+  .ti{width:52px}
 }
 
 .papers{margin:64px auto 0;max-width:44ch}
@@ -400,15 +402,15 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
       <p class="desc">Multi-tenant logistics SaaS, across several accounts and regions.</p>
       <div class="arts">
         <div class="art">
-          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(-5 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(3 46 31)"/><g transform="translate(15,13) rotate(3)"><rect x="0" y="12" width="15" height="14" rx="3" class="dwg"/><path d="M6 16h3M6 20h3" class="dwg"/><path d="M17 19h7M24 19l-4-8h6M24 19l-4 8h6" class="dw"/><rect x="32" y="1" width="13" height="10" rx="2.5" class="dw"/><rect x="32" y="14" width="13" height="10" rx="2.5" class="dw"/><rect x="32" y="27" width="13" height="10" rx="2.5" class="dw"/><path d="M50 6h5M50 19h5M50 32h5" class="dw" opacity=".5"/><rect x="56" y="12" width="13" height="14" rx="3" class="dw" stroke-dasharray="3 3"/></g></svg></span>
+          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(-5 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(3 46 31)"/><g transform="translate(17.50,14.50) rotate(3.0 28.50 16.50)"><rect x="0" y="10" width="13" height="13" rx="3" class="dwg"/><path d="M4 14h5M4 18.5h5" class="dwg"/><path d="M15 16.5h6" class="dw"/><path d="M18 13.5l3 3-3 3" class="dw"/><rect x="24" y="0" width="12" height="9" rx="2.5" class="dw"/><rect x="24" y="12" width="12" height="9" rx="2.5" class="dw"/><rect x="24" y="24" width="12" height="9" rx="2.5" class="dw"/><path d="M40 4.5h3M40 16.5h3M40 28.5h3" class="dw" opacity=".5"/><rect x="45" y="10" width="12" height="13" rx="3" class="dw" stroke-dasharray="3 3"/></g></svg></span>
           <span class="t"><b>AWS and Terraform, all day</b><span>Every change goes through Terraform. Shared modules push one edit to every environment, and a standby estate waits for the day a region goes down.</span></span>
         </div>
         <div class="art">
-          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(4 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(-3 46 31)"/><g transform="translate(16,14) rotate(-2)"><path d="M0 8l6-6 5 9 5-5" class="dw"/><rect x="21" y="6" width="18" height="18" rx="4" class="dwg"/><path d="M27 12h6M27 18h6" class="dwg"/><path d="M25 6V2M35 6V2M25 24v4M35 24v4M21 11h-4M21 19h-4M39 11h4M39 19h4" class="dwg"/><rect x="50" y="2" width="12" height="9" rx="2" class="dw"/><rect x="50" y="14" width="12" height="9" rx="2" class="dw"/><rect x="50" y="26" width="12" height="9" rx="2" class="dw"/></g></svg></span>
+          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(4 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(-3 46 31)"/><g transform="translate(15.00,12.50) rotate(-3.0 31.00 18.50)"><path d="M0 8l6-6 5 9 5-5" class="dw"/><rect x="21" y="6" width="18" height="18" rx="4" class="dwg"/><path d="M27 12h6M27 18h6" class="dwg"/><path d="M25 6V2M35 6V2M25 24v4M35 24v4M21 11h-4M21 19h-4M39 11h4M39 19h4" class="dwg"/><rect x="50" y="2" width="12" height="9" rx="2" class="dw"/><rect x="50" y="14" width="12" height="9" rx="2" class="dw"/><rect x="50" y="26" width="12" height="9" rx="2" class="dw"/></g></svg></span>
           <span class="t"><b>AI, from alerts &amp; incidents to tooling</b><span>AI-based alert response and RCA. Internal tools that help developers and ease daily tasks.</span></span>
         </div>
         <div class="art">
-          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(-4 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(4 46 31)"/><g transform="translate(15,16) rotate(2)"><path d="M2 2h10l9 9-10 10-9-9z" class="dw"/><circle cx="7.5" cy="7.5" r="2" class="fl"/><path d="M28 20c0-7 2-9 2-12a4 4 0 0 1 8 0c0 3 2 5 2 12z" class="dw"/><path d="M26 20h16M32 24a2.4 2.4 0 0 0 4 0" class="dw"/><rect x="50" y="11" width="16" height="12" rx="3" class="dwg"/><path d="M53.5 11V8a4.5 4.5 0 0 1 9 0v3" class="dwg"/><circle cx="58" cy="17" r="1.6" class="flg"/></g></svg></span>
+          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(-4 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(4 46 31)"/><g transform="translate(16.50,18.15) rotate(4.0 29.50 12.85)"><path d="M1 1h9l8 8-9 9-8-8z" class="dw"/><circle cx="6" cy="6" r="1.8" class="fl"/><path d="M25 19c0-6.5 1.8-8.5 1.8-11.2a3.7 3.7 0 0 1 7.4 0c0 2.7 1.8 4.7 1.8 11.2z" class="dw"/><path d="M23 19h15M29 22.5a2.2 2.2 0 0 0 3.6 0" class="dw"/><rect x="43" y="10" width="14" height="11" rx="3" class="dwg"/><path d="M46 10V7.4a4 4 0 0 1 8 0V10" class="dwg"/><circle cx="50" cy="15.5" r="1.5" class="flg"/></g></svg></span>
           <span class="t"><b>Nothing untracked, nothing unlocked</b><span>Every cost has a name. Every failure has an alert. Every key is short-lived.</span></span>
         </div>
       </div>
@@ -419,10 +421,10 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
       <span class="tag mono"><b class="ver">v1.2</b><span class="span"><i>2025<b>JUL</b></i><s></s><i>2025<b>FEB</b></i></span></span>
       <h2>Quickfox Technologies</h2>
       <h3>Associate DevOps Engineer</h3>
-      <p class="desc">A multi-tenant SaaS platform on AWS.</p>
+      <p class="desc">Part of AMNIL Technologies.</p>
       <div class="arts">
         <div class="art">
-          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(4 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(-3 46 31)"/><g transform="translate(16,14) rotate(-3)"><rect x="0" y="10" width="15" height="15" rx="2.5" class="dw"/><path d="M4 7h10a2 2 0 0 1 2 2v12" class="dw"/><path d="M8 4h10a2 2 0 0 1 2 2v12" class="dw"/><path d="M36 6 46 11.5v11L36 28l-10-5.5v-11z" class="dwg"/><circle cx="36" cy="17" r="2.6" class="flg"/><path d="M52 26 L58 20 L63 23 L70 9" class="dwg"/><path d="M64 9h6v6" class="dwg"/></g></svg></span>
+          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(4 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(-3 46 31)"/><g transform="translate(15.50,15.50) rotate(-3.0 30.50 15.50)"><rect x="0" y="4" width="14" height="6" rx="2" class="dw"/><rect x="0" y="12" width="14" height="6" rx="2" class="dw"/><rect x="0" y="20" width="14" height="6" rx="2" class="dw"/><circle cx="27" cy="15" r="8" class="dwg"/><circle cx="27" cy="15" r="2.2" class="flg"/><path d="M27 7.6v2.2M33 11.5l-1.9 1.1M33 18.5l-1.9-1.1M27 22.4v-2.2M21 18.5l1.9-1.1M21 11.5l1.9 1.1" class="dwg"/><rect x="40" y="9" width="5" height="17" rx="1.5" class="dwg"/><rect x="47" y="15" width="5" height="11" rx="1.5" class="dwg"/><rect x="54" y="20" width="5" height="6" rx="1.5" class="dwg"/><path d="M38 27h23" class="dw" opacity=".5"/></g></svg></span>
           <span class="t"><b>A deep dive into AWS</b><span>Infrastructure in CloudFormation, microservices on EKS, and a cloud bill brought down.</span></span>
         </div>
       </div>
@@ -436,19 +438,19 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
       <p class="desc">Banking infrastructure. Sites that were not allowed to go down.</p>
       <div class="arts">
         <div class="art">
-          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(-5 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(3 46 31)"/><g transform="translate(13,13) rotate(3)"><rect x="0" y="2" width="10" height="9" rx="2" class="dw"/><rect x="0" y="14" width="10" height="9" rx="2" class="dw"/><rect x="0" y="26" width="10" height="9" rx="2" class="dwg"/><ellipse cx="32" cy="9" rx="8" ry="3" class="dw"/><path d="M24 9v13c0 1.7 3.6 3 8 3s8-1.3 8-3V9" class="dw"/><path d="M42 16h6" class="dwg"/><path d="M45 13l3 3-3 3" class="dwg"/><ellipse cx="58" cy="9" rx="8" ry="3" class="dwg"/><path d="M50 9v13c0 1.7 3.6 3 8 3s8-1.3 8-3V9" class="dwg"/></g></svg></span>
+          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(-5 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(3 46 31)"/><g transform="translate(16.25,13.50) rotate(3.0 29.75 17.50)"><rect x="0" y="2" width="10" height="9" rx="2" class="dw"/><rect x="0" y="13" width="10" height="9" rx="2" class="dw"/><rect x="0" y="24" width="10" height="9" rx="2" class="dwg"/><ellipse cx="28" cy="9" rx="7.5" ry="3" class="dw"/><path d="M20.5 9v12c0 1.6 3.4 2.8 7.5 2.8s7.5-1.2 7.5-2.8V9" class="dw"/><path d="M38 15h5" class="dwg"/><path d="M40.5 12.5l2.5 2.5-2.5 2.5" class="dwg"/><ellipse cx="52" cy="9" rx="7.5" ry="3" class="dwg"/><path d="M44.5 9v12c0 1.6 3.4 2.8 7.5 2.8s7.5-1.2 7.5-2.8V9" class="dwg"/></g></svg></span>
           <span class="t"><b>Applications and databases that survive failure</b><span>High-availability Kubernetes clusters, and database replication set up for failover.</span></span>
         </div>
         <div class="art">
-          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(4 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(-3 46 31)"/><g transform="translate(17,17) rotate(-2)"><rect x="0" y="0" width="16" height="12" rx="2" class="dw"/><path d="M0 4h16" class="dw"/><rect x="20" y="0" width="16" height="12" rx="2" class="dw"/><path d="M20 4h16" class="dw"/><rect x="40" y="0" width="16" height="12" rx="2" class="dw"/><path d="M40 4h16" class="dw"/><rect x="0" y="16" width="16" height="12" rx="2" class="dw"/><path d="M0 20h16" class="dw"/><rect x="20" y="16" width="16" height="12" rx="2" class="dw"/><path d="M20 20h16" class="dw"/><rect x="40" y="16" width="16" height="12" rx="2" class="dwg"/><path d="M40 20h16" class="dwg"/></g></svg></span>
+          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(4 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(-3 46 31)"/><g transform="translate(18.00,17.00) rotate(-3.0 28.00 14.00)"><rect x="0" y="0" width="16" height="12" rx="2" class="dw"/><path d="M0 4h16" class="dw"/><rect x="20" y="0" width="16" height="12" rx="2" class="dw"/><path d="M20 4h16" class="dw"/><rect x="40" y="0" width="16" height="12" rx="2" class="dw"/><path d="M40 4h16" class="dw"/><rect x="0" y="16" width="16" height="12" rx="2" class="dw"/><path d="M0 20h16" class="dw"/><rect x="20" y="16" width="16" height="12" rx="2" class="dw"/><path d="M20 20h16" class="dw"/><rect x="40" y="16" width="16" height="12" rx="2" class="dwg"/><path d="M40 20h16" class="dwg"/></g></svg></span>
           <span class="t"><b>Kept 20+ bank websites up &amp; running</b><span>Including internal apps &amp; chatbots. Smooth deployments, security patches &amp; rare incidents.</span></span>
         </div>
         <div class="art">
-          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(5 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(-2 46 31)"/><g transform="translate(16,12) rotate(-3)"><rect x="0" y="0" width="25" height="32" rx="2.5" class="dw"/><path d="M6 8h13M6 15h13M6 22h9" class="dw"/><rect x="36" y="1" width="14" height="9" rx="2.5" class="dwg"/><rect x="36" y="22" width="14" height="9" rx="2.5" class="dwg"/><path d="M43 10v12" class="dwg"/><path d="M40 19l3 3 3-3" class="dwg"/></g></svg></span>
+          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(5 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(-2 46 31)"/><g transform="translate(21.00,15.00) rotate(-2.0 25.00 16.00)"><rect x="0" y="0" width="25" height="32" rx="2.5" class="dw"/><path d="M6 8h13M6 15h13M6 22h9" class="dw"/><rect x="36" y="1" width="14" height="9" rx="2.5" class="dwg"/><rect x="36" y="22" width="14" height="9" rx="2.5" class="dwg"/><path d="M43 10v12" class="dwg"/><path d="M40 19l3 3 3-3" class="dwg"/></g></svg></span>
           <span class="t"><b>Scripts, documentation and diagrams</b><span>Setup automated, then written down and drawn out so the next person could follow it.</span></span>
         </div>
         <div class="art">
-          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(-4 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(4 46 31)"/><g transform="translate(18,14) rotate(2)"><circle cx="9" cy="8" r="5.5" class="dwg"/><path d="M0 26c0-5.2 4-9 9-9s9 3.8 9 9" class="dwg"/><circle cx="30" cy="12" r="4.2" class="dw"/><path d="M23 27c0-4 3.1-7 7-7s7 3 7 7" class="dw"/><circle cx="48" cy="12" r="4.2" class="dw"/><path d="M41 27c0-4 3.1-7 7-7s7 3 7 7" class="dw"/></g></svg></span>
+          <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true"><rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(-4 43 32)"/><rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(4 46 31)"/><g transform="translate(18.50,16.25) rotate(4.0 27.50 14.75)"><circle cx="9" cy="8" r="5.5" class="dwg"/><path d="M0 26c0-5.2 4-9 9-9s9 3.8 9 9" class="dwg"/><circle cx="30" cy="12" r="4.2" class="dw"/><path d="M23 27c0-4 3.1-7 7-7s7 3 7 7" class="dw"/><circle cx="48" cy="12" r="4.2" class="dw"/><path d="M41 27c0-4 3.1-7 7-7s7 3 7 7" class="dw"/></g></svg></span>
           <span class="t"><b>Mentored interns and juniors</b><span>Ran training sessions and reviewed their work. Passed on what I&#39;d picked up.</span></span>
         </div>
       </div>
@@ -463,9 +465,9 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
       <div class="arts">
         <div class="art">
           <span class="pic"><svg viewBox="0 0 90 64" aria-hidden="true">
-            <rect x="10" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(5 45 32)"/>
-            <rect x="10" y="9" width="70" height="46" rx="5" class="cd" transform="rotate(-2 45 32)"/>
-            <g transform="translate(24,16) rotate(-2)">
+            <rect x="8" y="9" width="70" height="46" rx="5" class="cd2" transform="rotate(5 43 32)"/>
+            <rect x="11" y="8" width="70" height="46" rx="5" class="cd" transform="rotate(-2 46 31)"/>
+            <g transform="translate(27.50,16.00) rotate(-2 18.50 15.00)">
               <rect x="0" y="14" width="11" height="11" rx="2" class="dw"/>
               <rect x="13" y="14" width="11" height="11" rx="2" class="dw"/>
               <rect x="26" y="14" width="11" height="11" rx="2" class="dwg"/>
@@ -485,7 +487,7 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
     <div class="says">
       <div class="say">
         <p>I run cloud estates in code.<i>so it comes back the same every time</i></p>
-        <div class="tis"><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M5.5 17a3.6 3.6 0 0 1 .7-7.1A5 5 0 0 1 16 9.9 3.4 3.4 0 0 1 19 17z"/></svg><em>AWS</em></span><span class="ti"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="g1" d="M12 2.6 20 7.3v9.4L12 21.4 4 16.7V7.3z"/><path class="g1" d="M12 8.4a3.6 3.6 0 1 0 3.4 4.8"/><path class="g1" d="M12 12h3.8"/></svg><em>GCP</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="gf" d="M4 4.6 9 7.5v5.8L4 10.4zm5.8 3.4 5 2.9v5.8l-5-2.9zm5.8 2.9 4.4-2.6v5.2l-4.4 2.6z"/></svg><em>Terraform</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="gf" d="M6 6.5 10 9v4.6L6 11.2zm4.8 2.8 4.2 2.5v4.6l-4.2-2.5zm4.8 2.5 3.7-2.2v4.4L15.6 16z"/><path class="g1" d="M3.5 17.5h17"/></svg><em>OpenTofu</em></span><span class="ti"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="g1" x="3.5" y="9.5" width="11" height="11" rx="2"/><path class="g1" d="M7 6.5h9a2 2 0 0 1 2 2v9"/><path class="g1" d="M10.5 3.5h9a2 2 0 0 1 2 2v9"/></svg><em>CloudFormation</em></span></div>
+        <div class="tis"><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M5.5 17a3.6 3.6 0 0 1 .7-7.1A5 5 0 0 1 16 9.9 3.4 3.4 0 0 1 19 17z"/></svg><em>AWS</em></span><span class="ti"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="g1" d="M12 2.6 20 7.3v9.4L12 21.4 4 16.7V7.3z"/><path class="g1" d="M12 8.4a3.6 3.6 0 1 0 3.4 4.8"/><path class="g1" d="M12 12h3.8"/></svg><em>GCP</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="gf" d="M4 4.6 9 7.5v5.8L4 10.4zm5.8 3.4 5 2.9v5.8l-5-2.9zm5.8 2.9 4.4-2.6v5.2l-4.4 2.6z"/></svg><em>Terraform</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="gf" d="M6 6.5 10 9v4.6L6 11.2zm4.8 2.8 4.2 2.5v4.6l-4.2-2.5zm4.8 2.5 3.7-2.2v4.4L15.6 16z"/><path class="g1" d="M3.5 17.5h17"/></svg><em>OpenTofu</em></span><span class="ti"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="g1" x="3.5" y="9.5" width="11" height="11" rx="2"/><path class="g1" d="M7 6.5h9a2 2 0 0 1 2 2v9"/><path class="g1" d="M10.5 3.5h9a2 2 0 0 1 2 2v9"/></svg><em>Cloud<wbr>Formation</em></span></div>
       </div>
       <div class="say">
         <p>I ship containers and pipelines.<i>and they come back up on their own</i></p>
@@ -493,7 +495,7 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
       </div>
       <div class="say">
         <p>I watch it and keep it locked.<i>the alert arrives before the complaint</i></p>
-        <div class="tis"><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M3 18l4.5-2.5 4 1.5 3.5-7 3 3.5 3-6.5"/><path class="g1" d="M3 21h18" opacity=".45"/></svg><em>NewRelic</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M3 15.5a3.6 3.6 0 0 1 .8-7.1 5 5 0 0 1 9.5-1"/><path class="g1" d="M13 20l3-4h-3l3-4"/></svg><em>CloudWatch</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M4 20V9M9.3 20V4M14.7 20v-8M20 20v-5"/></svg><em>Grafana</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M12 2.8 20 6v6.4c0 4.4-3.3 7.6-8 8.8-4.7-1.2-8-4.4-8-8.8V6z"/><path class="g1" d="M8.8 12.2 11 14.4l4.4-4.6"/></svg><em>IAM</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M12 2.8 20 6v6.4c0 4.4-3.3 7.6-8 8.8-4.7-1.2-8-4.4-8-8.8V6z"/><circle class="gf" cx="12" cy="11" r="1.8"/><path class="g1" d="M12 12.8v3"/></svg><em>SecHub</em></span></div>
+        <div class="tis"><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M3 18l4.5-2.5 4 1.5 3.5-7 3 3.5 3-6.5"/><path class="g1" d="M3 21h18" opacity=".45"/></svg><em>NewRelic</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M3 15.5a3.6 3.6 0 0 1 .8-7.1 5 5 0 0 1 9.5-1"/><path class="g1" d="M13 20l3-4h-3l3-4"/></svg><em>Cloud<wbr>Watch</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M4 20V9M9.3 20V4M14.7 20v-8M20 20v-5"/></svg><em>Grafana</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M12 2.8 20 6v6.4c0 4.4-3.3 7.6-8 8.8-4.7-1.2-8-4.4-8-8.8V6z"/><path class="g1" d="M8.8 12.2 11 14.4l4.4-4.6"/></svg><em>IAM</em></span><span class="ti"><svg viewBox="0 0 24 24"><path class="g1" d="M12 2.8 20 6v6.4c0 4.4-3.3 7.6-8 8.8-4.7-1.2-8-4.4-8-8.8V6z"/><circle class="gf" cx="12" cy="11" r="1.8"/><path class="g1" d="M12 12.8v3"/></svg><em>SecHub</em></span></div>
       </div>
       <div class="say">
         <p>I write the glue and mind the data.<i>small tools, not big platforms</i></p>
@@ -649,9 +651,10 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduce)return;
 
-  var tx=0,ty=0,cx=0,cy=0,live=false,raf=0;
+  var tx=0,ty=0,cx=0,cy=0,live=false,raf=0,gyro=false,base=null;
 
   function aim(e){
+    if(gyro)return;              /* a real tilt beats a stray pointer event */
     var r=svg.getBoundingClientRect();
     if(!r.width)return;
     var ox=r.left+r.width/2, oy=r.top+r.height*0.40;
@@ -678,6 +681,34 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
 
   window.addEventListener('pointermove',aim,{passive:true});
   window.addEventListener('scroll',function(){if(!live){live=true;raf=requestAnimationFrame(frame);}},{passive:true});
+
+  /* ——— phones have no cursor, so tilt the whole device instead ——— */
+  function clamp(v){return v<-1?-1:v>1?1:v;}
+  function tilt(e){
+    if(e.gamma===null&&e.beta===null)return;       /* no sensor on this device */
+    var g=e.gamma||0, b=e.beta||0;
+    if(base===null){base={g:g,b:b};return;}        /* however you are holding it now is centre */
+    var dg=g-base.g, db=b-base.b,
+        ang=(screen.orientation&&screen.orientation.angle)||window.orientation||0;
+    if(ang===90){       tx=clamp(db/34);  ty=clamp(-dg/28); }
+    else if(ang===-90||ang===270){ tx=clamp(-db/34); ty=clamp(dg/28); }
+    else {              tx=clamp(dg/34);  ty=clamp(db/28); }
+    gyro=true;
+    if(!live){live=true;raf=requestAnimationFrame(frame);}
+  }
+  var DOE=window.DeviceOrientationEvent;
+  if(DOE&&typeof DOE.requestPermission==='function'){
+    /* iOS 13+ only hands this over from inside a real gesture */
+    window.addEventListener('touchend',function ask(){
+      DOE.requestPermission().then(function(r){
+        if(r==='granted')window.addEventListener('deviceorientation',tilt,{passive:true});
+      }).catch(function(){});
+    },{passive:true,once:true});
+  }else if(DOE){
+    window.addEventListener('deviceorientation',tilt,{passive:true});
+  }
+  /* a two-finger tap re-centres if you have shifted position */
+  window.addEventListener('touchstart',function(e){if(e.touches.length===2)base=null;},{passive:true});
 
   /* blink */
   (function blink(){

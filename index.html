@@ -65,20 +65,22 @@ body{
 @media(min-width:1340px){.wrap{padding-top:14vh}}
 
 /* --- avatar --- */
-:root{--av-line:#2b2a30;--av-fill:#bfe0d1;--av-white:#ffffff;--av-lens:rgba(26,158,82,.10)}
+:root{--av-line:#2b2a30;--av-skin:#ffffff;--av-fill:#bfe0d1;--av-shade:#bfe0d1;--av-eye:#ffffff;--av-pupil:#2b2a30;--av-stub:#2b2a30;--av-lens:rgba(26,158,82,.10)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --av-line:#e8e6ea;--av-fill:#2d5a46;--av-white:#1a191c;--av-lens:rgba(62,203,123,.12)}}
-:root[data-theme="dark"]{--av-line:#e8e6ea;--av-fill:#2d5a46;--av-white:#1a191c;--av-lens:rgba(62,203,123,.12)}
+  --av-line:#ece9ee;--av-skin:#544b42;--av-fill:#2f7d5c;--av-shade:#463d35;--av-eye:#f2efeb;--av-pupil:#1d2226;--av-stub:#a2968a;--av-lens:rgba(62,203,123,.14)}}
+:root[data-theme="dark"]{--av-line:#ece9ee;--av-skin:#544b42;--av-fill:#2f7d5c;--av-shade:#463d35;--av-eye:#f2efeb;--av-pupil:#1d2226;--av-stub:#a2968a;--av-lens:rgba(62,203,123,.14)}
 .avatar{width:min(224px,58%);margin:0 auto;display:block}
 .avatar+.intro{padding-top:30px}
 .avatar svg{width:100%;height:auto;display:block;overflow:visible}
 .o{fill:none;stroke:var(--av-line);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
-.w{fill:var(--av-white)}
+.w{fill:var(--av-skin)}
 .f{fill:var(--av-fill)}
-.pup{fill:var(--av-line)}
-.stubDot{fill:var(--av-line)}
+.eye{fill:var(--av-eye)}
+.pup{fill:var(--av-pupil)}
+.stubDot{fill:var(--av-stub)}
+.sh{fill:var(--av-shade)}
 .lens{fill:var(--av-lens)}
-.lid{fill:var(--av-white);transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);transition:transform .085s ease}
+.lid{fill:var(--av-skin);transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);transition:transform .085s ease}
 #av.blink .lid{transform:scaleY(1)}
 @media(prefers-reduced-motion:reduce){.lid{transition:none}}
 
@@ -342,7 +344,7 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
 
         <path class="w" d="M88 112C88 70 106 48 140 48s52 22 52 64v40c0 40-22 66-52 66s-52-26-52-66z"/>
         <g clip-path="url(#avFace)">
-          <path class="f" opacity=".45" d="M131 40h20v200h-20z"/>
+          <path class="sh" opacity=".5" d="M131 40h20v200h-20z"/>
           <path fill="url(#avStub)" d="M94 156c10 48 82 48 92 0v66H94z"/>
           <path fill="url(#avStub)" d="M117 163h46v13h-46z"/>
         </g>
@@ -357,8 +359,8 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
         </g>
 
         <g id="avEyes">
-          <ellipse class="w o" cx="116" cy="125" rx="10" ry="7.6"/>
-          <ellipse class="w o" cx="164" cy="125" rx="10" ry="7.6"/>
+          <ellipse class="eye o" cx="116" cy="125" rx="10" ry="7.6"/>
+          <ellipse class="eye o" cx="164" cy="125" rx="10" ry="7.6"/>
           <circle id="avPupL" class="pup" cx="116" cy="125" r="3.4"/>
           <circle id="avPupR" class="pup" cx="164" cy="125" r="3.4"/>
           <ellipse class="lid" cx="116" cy="125" rx="10.6" ry="8.2"/>

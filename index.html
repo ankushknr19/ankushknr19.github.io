@@ -656,7 +656,20 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduce)return;
 
-  var tx=0,ty=0,cx=0,cy=0,live=false,raf=0,gyro=false,base=null;
+  var tx=0,ty=0,cx=0,cy=0,live=false,raf=0,gyro=false;
+  var baseG=null,baseB=null;
+  var EASE_MOUSE=0.11, EASE_TILT=0.12, EASE_HOME=0.045;
+  var ease=EASE_MOUSE, idleT=null, IDLE=2200;   /* look forward again after this long with nothing happening */
+
+  function poke(){                       /* something moved: cancel the drift home */
+    ease = gyro ? EASE_TILT : EASE_MOUSE;
+    clearTimeout(idleT);
+    idleT=setTimeout(home, IDLE);
+  }
+  function home(){                       /* nothing has moved: ease back to straight ahead */
+    tx=0; ty=0; ease=EASE_HOME;
+    if(!live){live=true;raf=requestAnimationFrame(frame);}
+  }
 
   function aim(e){
     if(gyro)return;                       /* a real tilt beats a stray pointer event */
@@ -668,17 +681,19 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
     ty=(e.clientY-oy)/(r.height*1.25);
     tx=tx<-1?-1:tx>1?1:tx;
     ty=ty<-1?-1:ty>1?1:ty;
+    poke();
     if(!live){live=true;raf=requestAnimationFrame(frame);}
   }
 
   function frame(){
-    cx+=(tx-cx)*0.11;
-    cy+=(ty-cy)*0.11;
+    cx+=(tx-cx)*ease;
+    cy+=(ty-cy)*ease;
     /* head leads, body trails, pupils overshoot - that offset is what sells it */
-    head.setAttribute('transform','translate('+(cx*7).toFixed(2)+' '+(cy*4.5).toFixed(2)+') rotate('+(cx*2.6).toFixed(2)+' 140 190)');
-    if(body)body.setAttribute('transform','translate('+(cx*2.2).toFixed(2)+' '+(cy*1.1).toFixed(2)+')');
-    brows.setAttribute('transform','translate('+(cx*2.6).toFixed(2)+' '+(cy*4.2).toFixed(2)+')');
-    var px=(cx*3.6).toFixed(2), py=(cy*2.7).toFixed(2);
+    var k=gyro?1.27:1;                 /* the avatar is smaller on a phone: give it more throw */
+    head.setAttribute('transform','translate('+(cx*7*k).toFixed(2)+' '+(cy*4.5*k).toFixed(2)+') rotate('+(cx*2.6*k).toFixed(2)+' 140 190)');
+    if(body)body.setAttribute('transform','translate('+(cx*2.2*k).toFixed(2)+' '+(cy*1.1*k).toFixed(2)+')');
+    brows.setAttribute('transform','translate('+(cx*2.6*k).toFixed(2)+' '+(cy*4.2*k).toFixed(2)+')');
+    var px=(cx*3.6*k).toFixed(2), py=(cy*2.7*k).toFixed(2);
     pl.setAttribute('transform','translate('+px+' '+py+')');
     pr.setAttribute('transform','translate('+px+' '+py+')');
     if(Math.abs(tx-cx)>0.001||Math.abs(ty-cy)>0.001){raf=requestAnimationFrame(frame);}
@@ -690,16 +705,30 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
 
   /* --- phones have no cursor, so tilt the whole device instead --- */
   function clamp(v){return v<-1?-1:v>1?1:v;}
+
+  /* Whatever angle the phone is held at becomes "straight ahead".
+     The baseline is a slow average rather than the first reading: devices
+     commonly fire an uninitialised 0/0 event first, which used to pin centre
+     to lying-flat and leave the eyes stuck at full deflection in the hand. */
+  var SEEN=0, H=17, V=15;                /* degrees of tilt for full deflection */
   function tilt(e){
-    if(e.gamma===null&&e.beta===null)return;       /* no sensor on this device */
-    var g=e.gamma||0, b=e.beta||0;
-    if(base===null){base={g:g,b:b};return;}        /* however you are holding it now is centre */
-    var dg=g-base.g, db=b-base.b,
+    var g=e.gamma, b=e.beta;
+    if(g===null||b===null||g===undefined||b===undefined)return;   /* no sensor */
+    if(SEEN<2 && g===0 && b===0){SEEN++;return;}                  /* skip the 0/0 warm-up */
+    if(baseB===null){baseG=g; baseB=b;}                           /* first real reading seeds it */
+    else{ baseG+=(g-baseG)*0.012; baseB+=(b-baseB)*0.012; }       /* then drifts to wherever you settle */
+    var dg=g-baseG, db=b-baseB,
         ang=(screen.orientation&&screen.orientation.angle)||window.orientation||0;
-    if(ang===90){       tx=clamp(db/34);  ty=clamp(-dg/28); }
-    else if(ang===-90||ang===270){ tx=clamp(-db/34); ty=clamp(dg/28); }
-    else {              tx=clamp(dg/34);  ty=clamp(db/28); }
-    gyro=true;
+    var nx,ny;
+    if(ang===90){                  nx=clamp(db/H);  ny=clamp(-dg/V); }
+    else if(ang===-90||ang===270){ nx=clamp(-db/H); ny=clamp(dg/V);  }
+    else {                         nx=clamp(dg/H);  ny=clamp(db/V);  }
+    /* the sensor is noisy; smooth the target so the face is not chasing jitter */
+    var sx=tx+(nx-tx)*0.32, sy=ty+(ny-ty)*0.32;
+    var moved=Math.abs(sx-tx)+Math.abs(sy-ty) > 0.015;
+    tx=sx; ty=sy;
+    if(!gyro)gyro=true;
+    if(moved)poke();
     if(!live){live=true;raf=requestAnimationFrame(frame);}
   }
   var DOE=window.DeviceOrientationEvent;
@@ -717,7 +746,7 @@ a:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:2p
     startGyro();                     /* Android and the rest: live from load */
   }
   /* a two-finger tap re-centres if you have shifted position */
-  window.addEventListener('touchstart',function(e){if(e.touches.length===2)base=null;},{passive:true});
+  window.addEventListener('touchstart',function(e){if(e.touches.length===2){baseG=null;baseB=null;SEEN=0;}},{passive:true});
 
   /* blink */
   (function blink(){
